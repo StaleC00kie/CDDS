@@ -89,7 +89,6 @@ void CDDS::DoubleLinkedList::clear()
 {
 	Node* node = head;
 	Node* nextNode;
-	Node* node = head;
 
 	while (node != nullptr)
 	{
