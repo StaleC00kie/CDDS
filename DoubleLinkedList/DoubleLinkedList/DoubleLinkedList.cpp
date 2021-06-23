@@ -47,6 +47,35 @@ void CDDS::DoubleLinkedList::pushBack(int newData)
 	}
 }
 
+void CDDS::DoubleLinkedList::insert(Node* _node, int newData)
+{
+	Node* node = new Node(newData);
+
+	node->data = newData;
+	node->next = node;
+
+	if (_node != nullptr)
+	{
+		node->prev = _node->prev;
+		
+		if (_node->prev != nullptr)
+		{
+			_node->prev->next = node;
+			_node->prev = node;
+		}
+	}
+	
+	if (head = _node)
+	{
+		head = node;
+	}
+
+	if (tail == nullptr)
+	{
+		tail = node;
+	}
+}
+
 bool CDDS::DoubleLinkedList::isEmpty() const
 {
 	return (head == nullptr) && (tail == nullptr);

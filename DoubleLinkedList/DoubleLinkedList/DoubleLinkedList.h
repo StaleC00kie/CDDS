@@ -25,15 +25,6 @@ namespace CDDS
 		class Iterator
 		{
 		public:
-			void MoveNext()
-			{
-
-			}
-
-			void MovePrevious()
-			{
-
-			}
 
 			bool IsValid()
 			{
@@ -58,7 +49,7 @@ namespace CDDS
 			void pushFront(int newData);
 			// Add data to the end of the list
 			void pushBack(int newData);
-			void insert(int newData);
+			void insert(Node* node, int newData);
 			// Check if list is empty
 			bool isEmpty() const;
 			// Get the number of nodes in the list

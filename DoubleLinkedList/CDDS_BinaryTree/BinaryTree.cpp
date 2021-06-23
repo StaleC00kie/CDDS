@@ -1,13 +1,13 @@
-/*----------------------------------------
-Author: Richard Stern
-Description: A simple binary search tree
-Date: 17/4/2015
-----------------------------------------*/
 #include "BinaryTree.h"
 #include "TreeNode.h"
-#include "raylib.h"
+
 #include <iostream>
 #include <cstdlib>
+
+#ifdef  USE_RAYLIB
+#include "raylib.h"
+#endif //  USE_RAYLIB
+
 using namespace std;
 
 
@@ -206,7 +206,7 @@ void BinaryTree::Draw(TreeNode* selected)
 
 void BinaryTree::Draw(TreeNode* pNode, int x, int y, int horizontalSpacing, TreeNode* selected)
 {
-	
+#ifdef  USE_RAYLIB
 	horizontalSpacing /= 2;
 
 	if (pNode)
@@ -214,7 +214,7 @@ void BinaryTree::Draw(TreeNode* pNode, int x, int y, int horizontalSpacing, Tree
 		if (pNode->HasLeft())
 		{
 			DrawLine(x, y, x - horizontalSpacing, y + 80, RED);
-			
+
 			Draw(pNode->GetLeft(), x - horizontalSpacing, y + 80, horizontalSpacing, selected);
 		}
 
@@ -227,4 +227,8 @@ void BinaryTree::Draw(TreeNode* pNode, int x, int y, int horizontalSpacing, Tree
 
 		pNode->Draw(x, y, (selected == pNode));
 	}
+#endif //  USE_RAYLIB
+
+
+
 }
