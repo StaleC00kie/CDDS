@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 
-
 namespace CDDS 
 {
 	class DoubleLinkedList
@@ -63,6 +62,10 @@ namespace CDDS
 
 			// Free all memory in the list and reset
 			void clear();
+
+			void Draw();
+			void Update();
+
 
 
 
